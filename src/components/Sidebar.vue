@@ -24,6 +24,8 @@
         >
           {{ companyName }}
         </h6>
+        <!-- 
+        If you need this
         <feather-icon
           class="
             w-5
@@ -37,6 +39,7 @@
           name="chevron-down"
           @click="$emit('change-db-file')"
         />
+         -->
       </div>
 
       <!-- Sidebar Items -->

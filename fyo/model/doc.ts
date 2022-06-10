@@ -235,7 +235,7 @@ export class Doc extends Observable<DocValue | Doc[]> {
   }
 
   async _applyChange(fieldname: string): Promise<boolean> {
-    await this._applyFormula(fieldname);
+    // await this._applyFormula(fieldname);
     await this.trigger('change', {
       doc: this,
       changed: fieldname,
@@ -554,6 +554,7 @@ export class Doc extends Observable<DocValue | Doc[]> {
     const formulaFields = Object.keys(this.formulas).map(
       (fn) => this.fieldMap[fn]
     );
+
     changed ||= await this._applyFormulaForFields(
       formulaFields,
       doc,
@@ -567,6 +568,7 @@ export class Doc extends Observable<DocValue | Doc[]> {
     doc: Doc,
     fieldname?: string
   ) {
+
     let changed = false;
     for (const field of formulaFields) {
       const shouldApply = shouldApplyFormula(field, doc, fieldname);
@@ -610,7 +612,10 @@ export class Doc extends Observable<DocValue | Doc[]> {
 
   async _preSync() {
     this._setChildDocsIdx();
-    await this._applyFormula();
+    
+    // We don't need this formulas
+    // await this._applyFormula();
+
     await this._validateSync();
     await this.trigger('validate');
   }

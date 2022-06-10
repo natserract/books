@@ -71,7 +71,7 @@ function getCompleteSidebar(): SidebarConfig {
       icon: 'dashboard',
     },
     {
-      label: t`Sales`,
+      label: t`Penjualan (out)`,
       name: 'sales',
       icon: 'sales',
       route: '/list/SalesInvoice',
@@ -103,7 +103,7 @@ function getCompleteSidebar(): SidebarConfig {
       ],
     },
     {
-      label: t`Purchases`,
+      label: t`Pembelian (in)`,
       name: 'purchases',
       icon: 'purchase',
       route: '/list/PurchaseInvoice',

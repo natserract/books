@@ -96,7 +96,7 @@ export class Item extends Doc {
 
   static getListViewSettings(): ListViewSettings {
     return {
-      columns: ['name', 'unit', 'tax', 'rate'],
+      columns: ['name', 'unit', 'quantity', 'rate'],
     };
   }
 }

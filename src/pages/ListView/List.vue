@@ -122,9 +122,10 @@ export default defineComponent({
         columns = fyo.schemaMap[this.schemaName].quickEditFields ?? [];
         columns = [...new Set(['name', ...columns])];
       }
-
+      
       return columns
         .map((fieldname) => {
+
           if (typeof fieldname === 'object') {
             return fieldname;
           }

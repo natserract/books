@@ -287,6 +287,9 @@ export default {
         fieldList = this.doc.schema.fields.filter((f) => f.required);
       }
 
+      console.log('fieldList', fieldList)
+      console.log('this.doc', this.doc)
+
       this.formFields = fieldList.filter(
         (field) => field && !evaluateHidden(field, this.doc)
       );

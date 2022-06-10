@@ -6,9 +6,9 @@
   "fields": [
     {
       "fieldname": "name",
-      "label": "Item Name",
+      "label": "Nama Barang",
       "fieldtype": "Data",
-      "placeholder": "Item Name",
+      "placeholder": "Nama Barang",
       "required": true
     },
     {
@@ -18,40 +18,38 @@
     },
     {
       "fieldname": "description",
-      "label": "Description",
-      "placeholder": "Item Description",
+      "label": "Deskripsi",
+      "placeholder": "Deskripsi Barang",
       "fieldtype": "Text"
     },
     {
+      "fieldname": "hsnCode",
+      "label": "Kode Barang",
+      "fieldtype": "Int",
+      "placeholder": "Kode Barang",
+      "required": true
+    },
+    {
+      "fieldname": "quantity",
+      "label": "Jumlah Stok",
+      "fieldtype": "Int",
+      "required": true,
+      "default": 1
+    },
+    {
       "fieldname": "unit",
-      "label": "Unit Type",
+      "label": "Tipe Unit",
       "fieldtype": "Select",
-      "placeholder": "Unit Type",
-      "default": "Unit",
+      "placeholder": "Tipe Unit",
+      "default": "Pack",
       "options": [
         {
-          "value": "Unit",
-          "label": "Unit"
+          "value": "Pack",
+          "label": "Per Pack"
         },
         {
-          "value": "Kg",
-          "label": "Kg"
-        },
-        {
-          "value": "Gram",
-          "label": "Gram"
-        },
-        {
-          "value": "Meter",
-          "label": "Meter"
-        },
-        {
-          "value": "Hour",
-          "label": "Hour"
-        },
-        {
-          "value": "Day",
-          "label": "Day"
+          "value": "pcs",
+          "label": "Per Pcs"
         }
       ]
     },
@@ -65,12 +63,10 @@
         {
           "value": "Product",
           "label": "Product"
-        },
-        {
-          "value": "Service",
-          "label": "Service"
         }
-      ]
+      ],
+      "readOnly": true,
+      "hidden": true
     },
     {
       "fieldname": "for",
@@ -92,52 +88,22 @@
       ],
       "readOnly": true,
       "required": true,
-      "default": "Both"
-    },
-    {
-      "fieldname": "incomeAccount",
-      "label": "Income",
-      "fieldtype": "Link",
-      "target": "Account",
-      "placeholder": "Income",
-      "required": true
-    },
-    {
-      "fieldname": "expenseAccount",
-      "label": "Expense",
-      "fieldtype": "Link",
-      "target": "Account",
-      "placeholder": "Expense",
-      "required": true
-    },
-    {
-      "fieldname": "tax",
-      "label": "Tax",
-      "fieldtype": "Link",
-      "target": "Tax",
-      "placeholder": "Tax"
+      "default": "Both",
+      "hidden": true
     },
     {
       "fieldname": "rate",
-      "label": "Rate",
+      "label": "Harga",
       "fieldtype": "Currency"
-    },
-    {
-      "fieldname": "hsnCode",
-      "label": "HSN/SAC",
-      "fieldtype": "Int",
-      "placeholder": "HSN/SAC Code"
     }
   ],
   "quickEditFields": [
     "rate",
     "unit",
+    "quantity",
     "itemType",
     "for",
-    "tax",
     "description",
-    "incomeAccount",
-    "expenseAccount",
     "hsnCode"
   ],
   "keywordFields": ["name", "itemType", "for"]
